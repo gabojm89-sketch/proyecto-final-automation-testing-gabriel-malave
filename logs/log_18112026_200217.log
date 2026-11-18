@@ -1,0 +1,9 @@
+2026-11-18 20:02:18,503 INFO talento_tech - Inicializando la prueba de Inventario
+2026-11-18 20:02:18,504 INFO talento_tech - Ingresando a la pagina web
+2026-11-18 20:02:19,223 INFO talento_tech - Ingresando credenciales para iniciar sesion
+2026-11-18 20:02:19,630 INFO talento_tech - Sesion iniciada correctamente
+2026-11-18 20:02:19,737 INFO talento_tech - Productos de la pagina web capturados
+2026-11-18 20:02:19,737 INFO talento_tech - Prueba de cantidad de productos validada
+2026-11-18 20:02:19,866 INFO talento_tech - Prueba de integradad de la informacion de los productos validada
+2026-11-18 20:02:19,893 INFO talento_tech - Prueba de visibilidad del menu en la pagina validada
+2026-11-18 20:02:19,912 INFO talento_tech - Prueba de visibilidad del filtro en la pagina validada
