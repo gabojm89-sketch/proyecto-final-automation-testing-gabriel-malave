@@ -1,36 +1,17 @@
-# Automatizacion QA - Saucedemo
+# Automatización QA - SauceDemo y API
 
-Proyecto de automatizacion de pruebas realizado con python para el curso de Talento Tech.
+Proyecto de automatización de pruebas UI y API desarrollado en Python con Pytest, Selenium y Page Object Model para el curso de Talento Tech.
 
-## Tecnologias usadas
+## Tecnologías usadas
 - Python
-- Selenium
-- Pytest
-- Git
-- Github
+- Selenium WebDriver
+- Pytest y `pytest-html`
+- `requests` y `pytest-check`
+- Git y GitHub
 
-## Instalacion
+## Instalación
 
-Instalar las dependecias:
+Instalar las dependencias desde `requirements.txt` (o de forma individual):
 
-    ```python
-    pip install selenium
-    ```
-
-    ```python
-    pip install pytest
-    ```
-
-    ```python
-    pip install pytest-html
-    ```
-
-## Ejecutar las pruebas
-    ```python
-    pytest
-    ```
-
-## Casos de prueba
-- Login exitoso
-- Agregar producto al carrito
-- Verificar producto al carrito
+```bash
+pip install -r requirements.txt
