@@ -1,0 +1,40 @@
+2026-11-23 16:21:48,072 INFO talento_tech - Inicializando la prueba de carrito
+2026-11-23 16:21:48,073 INFO talento_tech - Ingresando a la pagina web de prueba
+2026-11-23 16:21:48,789 INFO talento_tech - Iniciando sesion con credenciales validas
+2026-11-23 16:21:49,154 INFO talento_tech - Sesion iniciada correctamente
+2026-11-23 16:21:49,155 INFO talento_tech - Leyendo el primer producto del JSON
+2026-11-23 16:21:49,155 INFO talento_tech - Agregando producto del JSON al carrito
+2026-11-23 16:21:49,461 INFO talento_tech - Prueba de contador de carrito validada
+2026-11-23 16:21:49,462 INFO talento_tech - Ir a la pagina del carrito
+2026-11-23 16:21:49,595 INFO talento_tech - Prueba del nombre del producto en carrito contra JSON validada
+2026-11-23 16:21:49,619 INFO talento_tech - Prueba del precio del producto en carrito contra JSON validada
+2026-11-23 16:21:53,483 INFO talento_tech - Iniciando prueba de multiples productos en carrito
+2026-11-23 16:21:54,951 INFO talento_tech - Contador de carrito validado con 2 productos
+2026-11-23 16:21:59,055 INFO talento_tech - Inicializando la prueba de Inventario
+2026-11-23 16:21:59,056 INFO talento_tech - Ingresando a la pagina web
+2026-11-23 16:21:59,812 INFO talento_tech - Ingresando credenciales para iniciar sesion
+2026-11-23 16:22:00,219 INFO talento_tech - Sesion iniciada correctamente
+2026-11-23 16:22:00,278 INFO talento_tech - Productos de la pagina web capturados
+2026-11-23 16:22:00,278 INFO talento_tech - Prueba de cantidad de productos validada
+2026-11-23 16:22:00,349 INFO talento_tech - Prueba de integridad de la informacion de los productos validada
+2026-11-23 16:22:00,369 INFO talento_tech - Prueba de visibilidad del menu en la pagina validada
+2026-11-23 16:22:00,383 INFO talento_tech - Prueba de visibilidad del filtro en la pagina validada
+2026-11-23 16:22:04,182 INFO talento_tech - Iniciando prueba de catalogo completo contra JSON
+2026-11-23 16:22:05,399 INFO talento_tech - Cantidad total de productos en inventario (6) validada
+2026-11-23 16:22:05,466 INFO talento_tech - Primer producto del inventario coincide con el archivo JSON
+2026-11-23 16:22:09,202 INFO talento_tech - Iniciando prueba de login para usuario: standard_user
+2026-11-23 16:22:09,901 INFO talento_tech - Pagina abierta correctamente
+2026-11-23 16:22:10,253 INFO talento_tech - Ingreso de credenciales completado
+2026-11-23 16:22:10,427 INFO talento_tech - Login exitoso: redireccion a inventario verificada
+2026-11-23 16:22:14,550 INFO talento_tech - Iniciando prueba de login para usuario: admin
+2026-11-23 16:22:15,269 INFO talento_tech - Pagina abierta correctamente
+2026-11-23 16:22:15,606 INFO talento_tech - Ingreso de credenciales completado
+2026-11-23 16:22:15,637 INFO talento_tech - Prueba de mensaje de error valida: Epic sadface: Username and password do not match any user in this service
+2026-11-23 16:22:19,403 INFO talento_tech - Iniciando prueba de login para usuario: jose
+2026-11-23 16:22:20,215 INFO talento_tech - Pagina abierta correctamente
+2026-11-23 16:22:20,550 INFO talento_tech - Ingreso de credenciales completado
+2026-11-23 16:22:20,579 INFO talento_tech - Prueba de mensaje de error valida: Epic sadface: Username and password do not match any user in this service
+2026-11-23 16:22:24,451 INFO talento_tech - Iniciando prueba de login con campos vacios
+2026-11-23 16:22:25,633 INFO talento_tech - Validacion de campos vacios exitosa
+2026-11-23 16:22:29,631 INFO talento_tech - Iniciando prueba de login con usuario bloqueado
+2026-11-23 16:22:30,765 INFO talento_tech - Validacion de usuario bloqueado exitosa
