@@ -1,16 +1,14 @@
-# x-api-key: pub_5bca5ffc8772df976fcf8970168a1ad219ad499c472afbba2f27085fa4b4ef7d
-
 import requests
 import pytest_check as check
 
-def test_obtener_usuario(base_url,headers):
+
+def test_obtener_usuario(base_url, headers):
     url = f"{base_url}/users/2"
 
-    response = requests.get(url,headers=headers)
+    response = requests.get(url, headers=headers)
 
     # NIVEL 1: STATUS CODE
-    codigo = response.status_code
-    assert codigo == 200
+    assert response.status_code == 200
 
     # NIVEL 2: HEADERS
     assert "application/json" in response.headers["Content-Type"]
@@ -18,9 +16,9 @@ def test_obtener_usuario(base_url,headers):
     # NIVEL 3: ESTRUCTURA
     data = response.json()
 
-    assert isinstance(data,dict) # Validar que el contenido sea un diccionario
+    assert isinstance(data, dict)
     assert "data" in data
-    assert isinstance(data["data"],dict)
+    assert isinstance(data["data"], dict)
 
     assert "id" in data["data"]
     assert "email" in data["data"]
@@ -35,63 +33,72 @@ def test_obtener_usuario(base_url,headers):
     assert response.elapsed.total_seconds() < 2
 
 
-def test_crear_usuario(base_url,headers):
+def test_crear_usuario(base_url, headers):
     url = f"{base_url}/users/"
 
     usuario = {
-        "email":"jose.montezuma@bue.edu.ar",
-        "first_name":"Jose",
-        "last_name":"Montezuma",
-        "job":"Instructor"
+        "email": "gabojm89@gamil.com",
+        "first_name": "Gabriel",
+        "last_name": "Malave",
+        "job": "QA Engineer"
     }
 
-    response = requests.post(url,headers=headers,json=usuario)
+    response = requests.post(url, headers=headers, json=usuario)
 
-    # NIVEL 1
+    # NIVEL 1: STATUS CODE
     assert response.status_code == 201
 
-    # NIVEL 2
+    # NIVEL 2: HEADERS
     assert "application/json" in response.headers["Content-Type"]
 
-    # NIVEL 3
+    # NIVEL 3: ESTRUCTURA
     data = response.json()
-    check.is_in("email",data) #assert "email" in data
-    check.is_in("first_name",data) #assert "first_name" in data
-    check.is_in("last_name",data) #assert "last_name" in data
-    check.is_in("id",data) #assert "id" in data
+    check.is_in("email", data)
+    check.is_in("first_name", data)
+    check.is_in("last_name", data)
+    check.is_in("id", data)
 
-    # NIVEL 4
-    check.equal(data["email"],usuario["email"]) # assert data["email"] == usuario["email"]
-    check.equal(data["first_name"],usuario["first_name"]) # assert data["first_name"] == usuario["first_name"]
+    # NIVEL 4: CONTENIDO
+    check.equal(data["email"], usuario["email"])
+    check.equal(data["first_name"], usuario["first_name"])
+    check.equal(data["last_name"], usuario["last_name"])
+    check.equal(data["job"], usuario["job"])
 
     # NIVEL 5: TIEMPO DE RESPUESTA
     assert response.elapsed.total_seconds() < 2
 
-def test_eliminar_usuario(base_url,headers):
+
+def test_eliminar_usuario(base_url, headers):
     url = f"{base_url}/users/2"
-    
-    response = requests.delete(url,headers=headers)
-    
+
+    response = requests.delete(url, headers=headers)
+
     # NIVEL 1: STATUS CODE
     assert response.status_code == 204
-    
+
     # NIVEL 2: HEADERS
     assert "Content-Type" not in response.headers
-    
+
     # NIVEL 3 Y 4: ESTRUCTURA Y CONTENIDO
     assert len(response.content) == 0
-    
+
     # NIVEL 5: TIEMPO DE RESPUESTA
     assert response.elapsed.total_seconds() < 2
-    
-"""
-{
-    "data":{
-        "id":2,
-        "email":"jose.montezuma@bue.edu.ar",
-        "nombre":"Jose",
-        "apellido":"Montezuma"
-    },
-    "support":{}
-}
-"""
+
+
+def test_usuario_no_encontrado(base_url, headers):
+    url = f"{base_url}/users/9999"
+
+    response = requests.get(url, headers=headers)
+
+    # NIVEL 1: STATUS CODE
+    assert response.status_code == 404
+
+    # NIVEL 2: HEADERS
+    assert "application/json" in response.headers["Content-Type"]
+
+    # NIVEL 3 Y 4: ESTRUCTURA Y CONTENIDO
+    assert response.json() == {}
+
+    # NIVEL 5: TIEMPO DE RESPUESTA
+    assert response.elapsed.total_seconds() < 2
